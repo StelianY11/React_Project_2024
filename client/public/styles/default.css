@@ -1,0 +1,20 @@
+* {
+    padding: 0em;
+    margin: 0em;
+    box-sizing: border-box;
+}
+
+html {
+    font: 14px/1.5 "Times New Roman", sans-serif;
+}
+
+body, input, textarea, button {
+    font: inherit;
+}
+
+h1 { font-size: 2.4em;} 
+h2 { font-size: 2em;}
+h3 { font-size: 1.8em;}
+h4 { font-size: 1.4em;}
+h5 { font-size: 1.2em;}
+h6 { font-size: 1em;}
