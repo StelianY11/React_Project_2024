@@ -1,9 +1,13 @@
+import { Link } from "react-router-dom";
+
 export default function Register() {
     return (
         <section id="register-page" className="content auth">
             <form id="register">
                 <div className="container">
                     <h1>Register</h1>
+
+                    <div className="border"></div>
 
                     <label htmlFor="email">Email:</label>
                     <input 
@@ -36,7 +40,7 @@ export default function Register() {
                     <input className="btn submit" type="submit" value="Register" />
 
                     <p className="field">
-                        <span>If you already registered click <a href="/login">here</a></span>
+                        <span>If you already registered click <Link to="/login">here</Link></span>
                     </p>
                 </div>
             </form>

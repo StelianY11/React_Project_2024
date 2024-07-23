@@ -7,6 +7,10 @@ import "../public/styles/styles.css"
 import Login from "./components/login/Login"
 import Register from "./components/register/Register"
 import Home from "./components/home/Home"
+import Logout from "./components/logout/Logout"
+import Games from "./components/games/Games"
+import CreateGames from "./components/create-games/CreateGames"
+import About from "./components/about/About"
 
 function App() {
 
@@ -15,12 +19,15 @@ function App() {
       <Header />
 
       <main id="site-main">
-          {/* <Routes>
-              <Route />
-          </Routes> */}
-          <Home />
-          {/*<Login />*/}
-          {/*<Register />*/}
+          <Routes>
+              <Route path="/" element={<Home />}/>
+              <Route path="/login" element={<Login />}/>
+              <Route path="/register" element={<Register />}/>
+              <Route path="/logout" element={<Logout />}/>
+              <Route path="/games" element={<Games />}/>
+              <Route path="/games/create" element={<CreateGames />}/>
+              <Route path="/about" element={<About />}/>
+          </Routes>
       </main>
 
       <Footer />

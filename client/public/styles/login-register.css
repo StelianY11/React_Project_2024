@@ -8,7 +8,7 @@
     background:
         /*#B859CC*/
         #9363D9;
-    box-shadow: 0px 0px 32px 0px #49535e, -14px -14px 20px #191c21;
+    box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.1), -12px -12px 18px rgba(0, 0, 0, 0.6);
 }
 
 #register-page {
@@ -18,8 +18,11 @@
     border-radius: 20px;
     padding: 40px;
     box-sizing: border-box;
-    background: #652CBC;
-    box-shadow: 0px 0px 32px 0px #49535e, -14px -14px 20px #191c21;
+    background:
+        /*#652CBC*/
+        #9363D9;
+    box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.2), -12px -12px 18px rgba(0, 0, 0, 0.6);
+    ;
 }
 
 .container {
@@ -27,6 +30,13 @@
     flex-direction: column;
     padding: 2em;
     align-items: center;
+}
+
+.container .border{
+    border: 1px solid #000000;
+    width: 100%;
+    margin: 0;
+    height: 1px; 
 }
 
 .container>h1 {
