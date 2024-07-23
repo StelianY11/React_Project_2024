@@ -1,2 +1,4 @@
 @import "./default.css";
-@import "./headerAndFootrr.css";
+@import "./header-footrr.css";
+@import "./login-register.css";
+@import "./homepage.css"
