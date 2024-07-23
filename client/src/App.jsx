@@ -11,6 +11,7 @@ import Logout from "./components/logout/Logout"
 import Games from "./components/games/Games"
 import CreateGames from "./components/create-games/CreateGames"
 import About from "./components/about/About"
+import GamesDetils from "./components/games-details/GamesDetails"
 
 function App() {
 
@@ -25,6 +26,7 @@ function App() {
               <Route path="/register" element={<Register />}/>
               <Route path="/logout" element={<Logout />}/>
               <Route path="/games" element={<Games />}/>
+              <Route path="/games/details" element={<GamesDetils />}/>
               <Route path="/games/create" element={<CreateGames />}/>
               <Route path="/about" element={<About />}/>
           </Routes>

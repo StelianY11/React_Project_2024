@@ -8,6 +8,29 @@ html {
     font: 14px/1.5 "Times New Roman", sans-serif;
 }
 
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+#site {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+#site-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
 body, input, textarea, button {
     font: inherit;
 }
@@ -23,5 +46,9 @@ body {
     background-image: url("../images/background.jpg");
     background-repeat: no-repeat;
     background-position: center top;
-    background-size: 1820px auto;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }

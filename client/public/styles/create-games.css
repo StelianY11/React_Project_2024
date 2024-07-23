@@ -1,0 +1,27 @@
+#create-page {
+    display: flex;
+    color: #dad8dc;
+    width: 640px;
+    background: rgb(147, 99, 217, 0.8);
+    margin: 0 auto;
+    margin-top: 5em;
+    padding: 2em;
+    border-radius: 1em;
+    border: 1px solid black;
+    box-shadow: 0 0 1em rgba(0, 0, 0, 1);
+}
+
+.createGame {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.createGame .border {
+    display: block;
+    border: 1px solid #000000;
+    width: 100%;
+    margin: 0;
+    height: 1px;
+    box-shadow: 0 0 1em rgba(0, 0, 0, 1);
+}

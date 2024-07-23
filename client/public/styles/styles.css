@@ -1,4 +1,6 @@
 @import "./default.css";
 @import "./header-footer.css";
 @import "./login-register.css";
-@import "./homepage.css"
+@import "./homepage.css";
+@import "./games-catalog.css";
+@import "./create-games.css";

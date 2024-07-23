@@ -1,5 +1,10 @@
 .auth {
     width: 100px;
+    margin: 11em auto;
+}
+
+.content.auth {
+    width: 100px;
     margin: 5em auto;
 }
 
@@ -16,7 +21,6 @@ header {
     position: relative;
     padding: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    margin-bottom: -20px;
 }
 
 header h1 a{
@@ -49,10 +53,9 @@ footer {
     justify-content: center;
     width: 100%;
     margin: 0 auto;
-    position: absolute;
-    bottom: 0;
+    position: relative;
+    margin-top: 2em;
     box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.5);
-    margin-top: -20px;
 }
 
 .footer-div {
