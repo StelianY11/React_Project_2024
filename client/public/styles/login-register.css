@@ -7,7 +7,7 @@
     box-sizing: border-box;
     background:
         /*#B859CC*/
-        #9363D9;
+        rgb(147, 99, 217, 0.8);
     box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.1), -12px -12px 18px rgba(0, 0, 0, 0.6);
 }
 
@@ -20,7 +20,7 @@
     box-sizing: border-box;
     background:
         /*#652CBC*/
-        #9363D9;
+        rgb(147, 99, 217, 0.8);
     box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.2), -12px -12px 18px rgba(0, 0, 0, 0.6);
     ;
 }

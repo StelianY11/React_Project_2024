@@ -11,9 +11,18 @@
     box-shadow: 0 0 1em rgba(0, 0, 0, 1);
 }
 
+#create{
+    width: 100%;
+}
+
+
 .createGame {
     display: flex;
     flex-direction: column;
+}
+
+.createGame h1 {
+    display: flex;
     justify-content: center;
 }
 
@@ -24,4 +33,39 @@
     margin: 0;
     height: 1px;
     box-shadow: 0 0 1em rgba(0, 0, 0, 1);
+}
+
+.btn.create-page{
+    background-color: #4616A4;
+    color: #fff;
+    border: none;
+    border-radius: 1em;
+    padding: 0.5em 1em;
+    margin-top: 1em;
+    margin-left: 24%;
+    cursor: pointer;
+    width: 50%;
+    transition: background-color 0.3s ease;
+    font-size: 1.5em;
+}
+
+.btn.create-page:hover {
+    background-color: #9842A5;
+}
+
+input#title,
+input#category,
+input#imageUrl{
+    border-radius: 1em;
+    padding: 0.5em;
+    font-size: 16px;
+    border: 1px solid #000000;
+    box-shadow: 0 0 1em rgba(0, 0, 0, 0.5);
+}
+
+textarea#summary {
+    padding: 0.5em 0.5em 5em 0.5em;
+    font-size: 16px;
+    border: 1px solid #000000;
+    box-shadow: 0 0 1em rgba(0, 0, 0, 0.5);
 }
