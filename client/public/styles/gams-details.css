@@ -1,0 +1,116 @@
+#game-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #dad8dc;
+    transition: all 0.4s;
+}
+
+#game-details>h1 {
+    color: #dad8dc;
+    font-size: 55px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.info-section {
+    padding: 2em;
+    width: 70%;
+    border-radius: 1em;
+    background-color: rgb(147, 99, 217, 0.8);
+    border: 1px solid #000;
+    box-shadow: 0 0 1em rgba(0, 0, 0, 0.6);
+}
+
+.game-img {
+    border-radius: 50%;
+    width: 12em;
+    height: 12em;
+    box-shadow: 0 0 1em rgba(0, 0, 0, 0.5);
+    border: 1px solid #000;
+    margin: 0em 4em 0em 1em;
+}
+
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1em;
+}
+
+.game-name {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.5em;
+}
+
+.likes-dislieks {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    font-size: 1.5em;
+    margin-left: auto;
+}
+
+.info-section .text {
+    font-size: 1.5em;
+    margin: 1em 0em 1em 0em;
+}
+
+
+
+.buttons {
+    display: flex;
+    justify-content: end;
+    padding: 1em 1em 1em 0em;
+}
+
+.button {
+    height: 15%;
+    text-decoration: none;
+    background-color: #4616A4;
+    border-radius: 1em;
+    margin: 0em 0.5em 0em 0em;
+    color: #dad8dc;
+    padding: 14px;
+    margin-top: auto;
+    font-size: 21px;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #9842A5;
+}
+
+.btn.add-comment {
+    position: relative;
+    background-color: #4616A4;
+    color: #dad8dc;
+    border: none;
+    border-radius: 1em;
+    padding: 0.5em 1em;
+    margin-top: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1.5em;
+}
+
+.btn.add-comment {
+    background-color: #9842A5;
+}
+
+.create-comment {
+    padding: 2em;
+    width: 30%;
+    border-radius: 1em;
+    margin: 2em;
+    background-color: rgb(147, 99, 217, 0.8);
+    border: 1px solid #000;
+    box-shadow: 0 0 1em rgba(0, 0, 0, 0.6);
+}
+
+.create-comment textarea {
+    padding: 0.5em 0.5em 5em 0.5em;
+    width: 100%;
+}
