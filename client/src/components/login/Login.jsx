@@ -1,4 +1,7 @@
 import { Link } from "react-router-dom";
+import loginIcon from "../../../public/images/login-avatar.png";
+import passwordIcon from "../../../public/images/padlock.png";
+
 
 export default function Login() {
     return (
@@ -9,19 +12,25 @@ export default function Login() {
 
                     <div className="border"></div>
 
-                    <label htmlFor="username">Username:</label>
-                    <input 
-                        type="text"
-                        name="username"
-                        id="username"
-                    />
+                    <div className="input-wrapper">
+                        <img src={loginIcon} className="icon" />
+                        <label htmlFor="username">Username:</label>
+                        <input
+                            type="text"
+                            name="username"
+                            id="username"
+                        />
+                    </div>
 
-                    <label htmlFor="password">Password:</label>
-                    <input 
-                        type="password" 
-                        name="password" 
-                        id="password" 
-                    />
+                    <div className="input-wrapper">
+                        <img src={passwordIcon} className="icon" />
+                        <label htmlFor="password">Password:</label>
+                        <input
+                            type="password"
+                            name="password"
+                            id="password"
+                        />
+                    </div>
 
                     <input className="btn submit" type="submit" value="Login" />
 

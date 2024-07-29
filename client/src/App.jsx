@@ -10,8 +10,8 @@ import Home from "./components/home/Home"
 import Logout from "./components/logout/Logout"
 import Games from "./components/games/Games"
 import CreateGames from "./components/create-games/CreateGames"
-import About from "./components/about/About"
 import GamesDetils from "./components/games-details/GamesDetails"
+import Edit from "./components/edit/Edit"
 
 function App() {
 
@@ -27,8 +27,8 @@ function App() {
               <Route path="/logout" element={<Logout />}/>
               <Route path="/games" element={<Games />}/>
               <Route path="/games/details" element={<GamesDetils />}/>
+              <Route path="/games/details/edit" element={<Edit />}/>
               <Route path="/games/create" element={<CreateGames />}/>
-              <Route path="/about" element={<About />}/>
           </Routes>
       </main>
 

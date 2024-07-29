@@ -1,4 +1,7 @@
 import { Link } from "react-router-dom";
+import loginIcon from "../../../public/images/login-avatar.png";
+import passwordIcon from "../../../public/images/padlock.png";
+import emailIcon from "../../../public/images/email.png";
 
 export default function Register() {
     return (
@@ -9,33 +12,46 @@ export default function Register() {
 
                     <div className="border"></div>
 
-                    <label htmlFor="email">Email:</label>
-                    <input 
-                        type="email"
-                        name="email"
-                        id="email"
-                    />
+                    <div className="input-wrapper">
+                        <img src={emailIcon} className="icon" />
+                        <label htmlFor="email">Email:</label>
+                        <input
+                            type="email"
+                            name="email"
+                            id="email"
+                        />
+                    </div>
 
-                    <label htmlFor="username">Username:</label>
-                    <input
-                        type="text"
-                        name="username"
-                        id="username"
-                    />
+                    <div className="input-wrapper">
+                        <img src={loginIcon} className="icon" />    
+                        <label htmlFor="username">Username:</label>
+                        <input
+                            type="text"
+                            name="username"
+                            id="username"
+                        />
+                    </div>
 
-                    <label htmlFor="password">Password:</label>
-                    <input
-                        type="password"
-                        name="password"
-                        id="password"
-                    />
+                    <div className="input-wrapper">
+                        <img src={passwordIcon} className="icon" />
+                        <label htmlFor="password">Password:</label>
+                        <input
+                            type="password"
+                            name="password"
+                            id="password"
+                        />
+                    </div>
 
-                    <label htmlFor="re-password">Repeate Password:</label>
-                    <input
-                        type="password"
-                        name="re-password"
-                        id="re-password"
-                    />
+                    <div className="input-wrapper">
+                        <img src={passwordIcon} className="icon" />
+                        <label htmlFor="re-password">Repeate Password:</label>
+                        <input
+                            type="password"
+                            name="re-password"
+                            id="re-password"
+                        />
+                    </div>
+
 
                     <input className="btn submit" type="submit" value="Register" />
 

@@ -19,6 +19,8 @@ export default function GamesDetils() {
                     </div>
                 </div>
 
+                <div className="border"></div>
+
                 <p className="text">
                     Set in a world where fantasy creatures live side by side with humans. A human cop is forced to work
                     with an Orc to find a weapon everyone is prepared to kill for. Set in a world where fantasy

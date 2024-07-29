@@ -11,7 +11,6 @@ export default function Header() {
 
             <nav>
                 <Link to="/games">Games</Link>
-                <Link to="/about">About Us</Link>
 
                 <div id="user">
                     <Link to="/games/create">Create Game</Link>

@@ -70,13 +70,13 @@ label:nth-of-type(2) {
     margin-top: 20px;
 }
 
-.container>
+.container
 input[type="text"],
 input[type="password"],
 input[type="number"],
 input[type="email"] {
     background: #ecebed;
-    padding: 0.5em 0.7em 0.5em 0.7em;
+    padding: 0.5em 0.7em 0.5em 3em;
     font-size: 16px;
     border-radius: 1em;
     box-shadow: 0 0 1em rgba(0, 0, 0, 0.5);
@@ -118,4 +118,32 @@ input[type="email"] {
     cursor: pointer;
     color: #000000;
     font-weight: bolder;
+}
+
+.input-wrapper {
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.input-wrapper .icon {
+    position: absolute;
+    top: 80px;
+    left: 10px;
+    transform: translateY(-50%);
+    width: 25px;
+    height: 25px;
+    pointer-events: none;
+}
+
+.input-wrapper::after {
+    content: "";
+    position: absolute;
+    left: 40px;
+    top: 80px;
+    transform: translateY(-50%);
+    height: 25%; /* Adjust according to your input height */
+    width: 1px;
+    background-color: #000;
+    pointer-events: none;
 }

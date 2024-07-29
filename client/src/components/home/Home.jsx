@@ -5,8 +5,8 @@ export default function Home() {
         <section id="home-page">
 
             <div className="message">
-                <h1>Welcome to our game catalog</h1>
-                <h3>we are here to discuss...</h3>
+                <h1>Step Into the World of Incredible Games</h1>
+                <h3>Explore and Enjoy a Wide Variety of Exciting Games and Find Your Next Favorite Adventure</h3>
             </div>
 
             <img src={hero} alt="" />

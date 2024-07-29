@@ -36,7 +36,7 @@
 .game-header {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 1em;
+    margin-bottom: 2em;
 }
 
 .game-name {
@@ -113,4 +113,13 @@
 .create-comment textarea {
     padding: 0.5em 0.5em 5em 0.5em;
     width: 100%;
+}
+
+.info-section .border {
+    display: block;
+    border: 1px solid #000000;
+    width: 100%;
+    margin: 0;
+    height: 1px;
+    box-shadow: 0 0 1em rgba(0, 0, 0, 1);
 }
