@@ -1,0 +1,23 @@
+{
+    "fe171747-5434-4fb6-8e18-dea8bc704c41": {
+        "title": "Game Name: Red Dead Redemption 2",
+        "category": "Category: Action",
+        "imageUrl": "/images/Red_Dead_Redemption_2.png",
+        "summary": "Red Dead Redemption 2, by Rockstar Games, is an action-adventure game set in 1899. It follows Arthur Morgan and the Van der Linde gang during the decline of the American Old West. Players explore an open world, engaging in various activities while navigating themes of loyalty and betrayal. The game is praised for its rich narrative, detailed graphics, and complex characters.",
+        "_id": "fe171747-5434-4fb6-8e18-dea8bc704c41"
+    },
+    "821d4013-32c3-4891-95c1-0d0cc1336014": {
+        "title": "Game Name: Fifa 2024",
+        "category": "Category: Sport",
+        "imageUrl": "/images/Fifa24.png",
+        "summary": "FIFA 24, developed by EA Sports, is the latest installment in the popular football simulation video game series. It features updated team rosters, improved graphics, and enhanced gameplay mechanics. Players can manage teams, compete in various leagues and tournaments, and experience realistic football action both online and offline. The game continues to offer popular modes like Career Mode, Ultimate Team, and Volta Football.",
+        "_id": "821d4013-32c3-4891-95c1-0d0cc1336014"
+    },
+    "d43dc1ee-a1f1-4600-876b-fb723344d7f9": {
+        "title": "Game Name: Forza Horizon 5",
+        "category": "Category: Racing",
+        "imageUrl": "/images/forza.jpg",
+        "summary": "Forza Horizon 5 is an open-world racing game set in a vibrant, expansive version of Mexico. Developed by Playground Games, it offers diverse environments, from deserts to jungles, and a variety of races and events. Players can customize cars, explore freely, and compete in both solo and multiplayer modes. The game is praised for its stunning visuals, engaging gameplay, and dynamic weather system.",
+        "_id": "d43dc1ee-a1f1-4600-876b-fb723344d7f9"
+    }
+}
