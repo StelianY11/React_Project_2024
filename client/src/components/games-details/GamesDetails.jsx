@@ -1,16 +1,29 @@
-import fifa from "../../../public/images/Fifa24.png";
+import { useEffect, useState } from "react";
+import gamesAPI from "../../api/gamesApi";
+import { useParams } from "react-router-dom";
 
 export default function GamesDetils() {
+    const [game, setGame] = useState({});
+    const { gameId }= useParams();
+    
+    useEffect(() => {
+        (async () => {
+            const result = await gamesAPI.getOne(gameId);
+
+            setGame(result);
+        })();
+    });
+
     return (
         <section id="game-details">
             <h1>Game Details</h1>
             <div className="info-section">
 
                 <div className="game-header">
-                    <img className="game-img" src={fifa} />
+                    <img className="game-img" src={game.imageUrl} />
                     <div className="game-name">
-                        <h1>Fifa 2024</h1>
-                        <p className="type">Sport</p>
+                        <h1>{game.title}</h1>
+                        <p className="type">{game.category}</p>
                     </div>
 
                     <div className="likes-dislieks">
@@ -21,12 +34,7 @@ export default function GamesDetils() {
 
                 <div className="border"></div>
 
-                <p className="text">
-                    Set in a world where fantasy creatures live side by side with humans. A human cop is forced to work
-                    with an Orc to find a weapon everyone is prepared to kill for. Set in a world where fantasy
-                    creatures live side by side with humans. A human cop is forced
-                    to work with an Orc to find a weapon everyone is prepared to kill for.
-                </p>
+                <p className="text">{game.summary}</p>
 
                 <div className="details-comments">
                     <h2>Comments:</h2>

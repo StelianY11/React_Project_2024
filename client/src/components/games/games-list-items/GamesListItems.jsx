@@ -19,7 +19,7 @@ export default function GamesListItems({
                             <button className="likeBtn">Like</button>
                             <button className="disLikeBtn">Dislike</button>
                         </div>
-                        <Link to="/games/details" className="detailsBtn">Details</Link>
+                        <Link to={`/games/${_id}/details`} className="detailsBtn">Details</Link>
                     </div>
                 </div>
         </div>
