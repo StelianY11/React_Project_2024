@@ -117,6 +117,7 @@ input[type="email"] {
 .field a:hover {
     cursor: pointer;
     color: #000000;
+    text-decoration: underline;
     font-weight: bolder;
 }
 

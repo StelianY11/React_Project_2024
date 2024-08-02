@@ -2,20 +2,15 @@ import { useEffect, useState } from "react";
 import gamesAPI from "../../api/gamesApi";
 import { useParams } from "react-router-dom";
 import commentsApi from "../../api/commentsApi";
+import { useGetOneGame } from "../../hooks/gamesHooks/useOneGames";
 
 export default function GamesDetils() {
-    const [game, setGame] = useState({});
+    const { gameId } = useParams();
+    const [game, setGame] = useGetOneGame(gameId);
     const [username, setUsername] = useState('');
     const [comment, setComment] = useState('');
-    const { gameId } = useParams();
 
-    useEffect(() => {
-        (async () => {
-            const result = await gamesAPI.getOne(gameId);
-
-            setGame(result);
-        })();
-    }, []);
+    
 
     const commentSubitHandler = async (e) => {
         e.preventDefault();
