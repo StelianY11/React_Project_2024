@@ -1,34 +1,81 @@
+import { useNavigate } from "react-router-dom";
 import { useForm } from "../../hooks/useForm";
+import { useCreateGame } from "../../hooks/gamesHooks/useCreateGame";
 
-const initialValues = { 
+const initialValues = {
     title: "",
     category: "",
-    imageUrl: "", 
+    imageUrl: "",
     summary: "",
 }
 
 export default function CreateGames() {
-    const {} = useForm();
+    const navigate = useNavigate();
+    const createGame = useCreateGame();
+
+    const createHandler = async (values) => {
+        try {
+            const { _id: gameId } = await createGame(values);
+            navigate(`/games/${gameId}/details`);
+        } catch (error) {
+            // TODO: handle error
+            console.log(err.message);
+        }
+    };
+
+    const {
+        values,
+        changeHandler,
+        submitHandler,
+    } = useForm(initialValues, createHandler);
 
     return (
         <section id="create-page">
-            <form id="create">
+            <form id="create" onSubmit={submitHandler}>
                 <div className="createGame">
 
                     <h1>Create Game</h1>
                     <div className="border"></div>
                     <label>Game title:</label>
-                    <input type="text" id="title" name="title" placeholder="Enter game title..."/>
+                    <input
+                        type="text"
+                        id="title"
+                        name="title"
+                        value={values.title}
+                        onChange={changeHandler}
+                        placeholder="Enter game title..."
+                    />
 
                     <label>Category:</label>
-                    <input type="text" id="category" name="category" placeholder="Enter game category..."/>
+                    <input
+                        type="text"
+                        id="category"
+                        name="category"
+                        value={values.category}
+                        onChange={changeHandler}
+                        placeholder="Enter game category..."
+                    />
 
                     <label>Image:</label>
-                    <input type="text" id="imageUrl" name="imageUrl" placeholder="Upload a photo..."/>
+                    <input
+                        type="text"
+                        id="imageUrl"
+                        name="imageUrl"
+                        value={values.imageUrl}
+                        onChange={changeHandler}
+                        placeholder="Upload a photo..."
+                    />
 
                     <label>Summary:</label>
-                    <textarea name="summary" id="summary"></textarea>
-                    <input className="btn create-page" type="submit" value="Create Game"/>
+                    <textarea
+                        name="summary"
+                        id="summary"
+                        value={values.summary}
+                        onChange={changeHandler}
+                    >
+
+                    </textarea>
+                    <input className="btn create-page" type="submit" value="Create Game" />
                 </div>
             </form>
         </section>
