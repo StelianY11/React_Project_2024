@@ -1,16 +1,19 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import gamesAPI from "../../api/gamesApi";
 import { useParams } from "react-router-dom";
 import commentsApi from "../../api/commentsApi";
 import { useGetOneGame } from "../../hooks/gamesHooks/useOneGames";
+import { AuthContext } from "../../contexts/AuthContext";
 
 export default function GamesDetils() {
+    const { isAuthenticated } = useContext(AuthContext);
+
     const { gameId } = useParams();
     const [game, setGame] = useGetOneGame(gameId);
     const [username, setUsername] = useState('');
     const [comment, setComment] = useState('');
 
-    
+
 
     const commentSubitHandler = async (e) => {
         e.preventDefault();
@@ -54,45 +57,50 @@ export default function GamesDetils() {
                 <div className="details-comments">
                     <h2>Comments:</h2>
                     <ul>
-                    {Object.keys(game.comments || {}).length > 0
-                        ? Object.values(game.comments).map(comment => (
+                        {Object.keys(game.comments || {}).length > 0
+                            ? Object.values(game.comments).map(comment => (
                                 <li key={comment._id} className="comment">
                                     <p>{comment.username}: {comment.text}</p>
                                 </li>
-                        ))
-                        : <p className="no-comment">No comments.</p>
-                    }
+                            ))
+                            : <p className="no-comment">No comments.</p>
+                        }
                     </ul>
 
                 </div>
 
-                <div className="buttons">
-                    <a href="/games/details/edit" className="button">Edit</a>
-                    <a href="#" className="button">Delete</a>
-                </div>
+                {isAuthenticated && (
+                    <div className="buttons">
+                        <a href="/games/details/edit" className="button">Edit</a>
+                        <a href="#" className="button">Delete</a>
+                    </div>
+                )}
+
             </div>
 
-            <article className="create-comment">
-                <label>Add new comment:</label>
-                <form className="form" onSubmit={commentSubitHandler}>
-                    <input
-                        type="text"
-                        placeholder="Stelian"
-                        name="username"
-                        onChange={(e) => setUsername(e.target.value)}
-                        value={username}
-                    />
+            {isAuthenticated && (
+                <article className="create-comment">
+                    <label>Add new comment:</label>
+                    <form className="form" onSubmit={commentSubitHandler}>
+                        <input
+                            type="text"
+                            placeholder="Stelian"
+                            name="username"
+                            onChange={(e) => setUsername(e.target.value)}
+                            value={username}
+                        />
 
-                    <textarea
-                        name="comment"
-                        placeholder="Comment......"
-                        onChange={(e) => setComment(e.target.value)}
-                        value={comment}
-                    ></textarea>
+                        <textarea
+                            name="comment"
+                            placeholder="Comment......"
+                            onChange={(e) => setComment(e.target.value)}
+                            value={comment}
+                        ></textarea>
 
-                    <input className="btn add-comment" type="submit" value="Add Comment" />
-                </form>
-            </article>
+                        <input className="btn add-comment" type="submit" value="Add Comment" />
+                    </form>
+                </article>
+            )}
 
         </section>
     );

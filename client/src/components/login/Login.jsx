@@ -3,24 +3,27 @@ import loginIcon from "../../../public/images/login-avatar.png";
 import passwordIcon from "../../../public/images/padlock.png";
 import { useForm } from "../../hooks/useForm";
 import { useLogin } from "../../hooks/useAuth";
+import { useState } from "react";
 
 
 const initialValues = { email: "", password: "" };
 
 export default function Login() {
+    const [ incorrectValue, setIncorrectValue ] = useState("");
+
     const login = useLogin();
     const navigate = useNavigate();
-    const loginHandler = async ({email, password}) => {
+    const loginHandler = async ({ email, password }) => {
         try {
             await login(email, password)
             navigate("/")
         } catch (error) {
+            setIncorrectValue(error.message);
             console.log(error.message);
-            // Have to change error message
         }
     };
 
-    const {values, changeHandler, submitHandler} = useForm(initialValues, loginHandler);
+    const { values, changeHandler, submitHandler } = useForm(initialValues, loginHandler);
 
     return (
         <section id="login-page" className="auth">
@@ -55,6 +58,10 @@ export default function Login() {
                             placeholder="************"
                         />
                     </div>
+
+                    {incorrectValue && (
+                        <p className="incorrectValues">{incorrectValue}.</p>
+                    )}
 
                     <input className="btn submit" type="submit" value="Login" />
 

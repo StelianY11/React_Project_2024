@@ -24,7 +24,6 @@ export default function Register() {
         } catch (error) {
             setWorngPassword(error.message);
             console.log(error.message);
-            // Have to change error message
         }
     };
 

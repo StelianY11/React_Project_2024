@@ -1,4 +1,15 @@
+import { useForm } from "../../hooks/useForm";
+
+const initialValues = { 
+    title: "",
+    category: "",
+    imageUrl: "", 
+    summary: "",
+}
+
 export default function CreateGames() {
+    const {} = useForm();
+
     return (
         <section id="create-page">
             <form id="create">
