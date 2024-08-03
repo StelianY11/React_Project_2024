@@ -1,19 +1,19 @@
-import { Routes, Route } from "react-router-dom"
-import { useState } from "react"
+import { Routes, Route } from "react-router-dom";
+import { useState } from "react";
 
-import Footer from "./components/footer/Footer"
-import Header from "./components/header/Header"
+import Footer from "./components/footer/Footer";
+import Header from "./components/header/Header";
 
-import "../public/styles/styles.css"
-import Login from "./components/login/Login"
-import Register from "./components/register/Register"
-import Home from "./components/home/Home"
-import Logout from "./components/logout/Logout"
-import Games from "./components/games/Games"
-import CreateGames from "./components/create-games/CreateGames"
-import GamesDetils from "./components/games-details/GamesDetails"
-import Edit from "./components/edit/Edit"
-import { AuthContext } from "./contexts/authContext"
+import "../public/styles/styles.css";
+import Login from "./components/login/Login";
+import Register from "./components/register/Register";
+import Home from "./components/home/Home";
+import Logout from "./components/logout/Logout";
+import Games from "./components/games/Games";
+import CreateGames from "./components/create-games/CreateGames";
+import GamesDetils from "./components/games-details/GamesDetails";
+import Edit from "./components/edit/Edit";
+import { AuthContext } from "./contexts/AuthContext";
 
 function App() {
   const [authState, setAuthState] = useState({});
@@ -23,6 +23,7 @@ function App() {
   };
 
   const contextData = {
+    userId: authState.userId,
     email: authState.email,
     accessToken: authState.accessToken,
     isAuthenticated: !!authState.email,
