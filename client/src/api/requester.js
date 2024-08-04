@@ -10,11 +10,11 @@ async function requester(method, url, data) {
         };
     }
 
-    if(method !== 'GET') {
+    if (method !== 'GET') {
         options.method = method;
     }
 
-    if(data) {
+    if (data) {
         options.headers = {
             ...options.headers,
             'Content-Type': 'application/json',
@@ -23,10 +23,15 @@ async function requester(method, url, data) {
         options.body = JSON.stringify(data);
     }
 
-    const responce = await fetch(url, options);
-    const result = await responce.json();
+    const response = await fetch(url, options);
 
-    if(!responce.ok){
+    if (response.status === 204) {
+        return;
+    }
+
+    const result = await response.json();
+
+    if (!response.ok) {
         console.log(result);
         throw result;
     }
