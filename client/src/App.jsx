@@ -1,5 +1,4 @@
 import { Routes, Route } from "react-router-dom";
-import { useState } from "react";
 
 import Footer from "./components/footer/Footer";
 import Header from "./components/header/Header";
@@ -13,27 +12,12 @@ import Games from "./components/games/Games";
 import CreateGames from "./components/create-games/CreateGames";
 import GamesDetils from "./components/games-details/GamesDetails";
 import Edit from "./components/edit/Edit";
-import { AuthContext } from "./contexts/AuthContext";
+import { AuthContextProvider } from "./contexts/AuthContext";
+
 
 function App() {
-  const [authState, setAuthState] = useState({});
-
-  const changeState = (state) => {
-    localStorage.setItem('accessToken', state.accessToken);
-
-    setAuthState(state);
-  };
-
-  const contextData = {
-    userId: authState.userId,
-    email: authState.email,
-    accessToken: authState.accessToken,
-    isAuthenticated: !!authState.email,
-    changeState,
-  }
-
   return (
-    <AuthContext.Provider value={contextData}>
+    <AuthContextProvider>
       <div id="site">
         <Header />
 
@@ -52,7 +36,7 @@ function App() {
 
         <Footer />
       </div>
-    </AuthContext.Provider>
+    </AuthContextProvider>
   )
 }
 

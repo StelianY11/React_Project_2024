@@ -5,6 +5,7 @@ import commentsApi from "../../api/commentsApi";
 import { useGetOneGame } from "../../hooks/gamesHooks/useOneGames";
 import { AuthContext } from "../../contexts/AuthContext";
 
+
 export default function GamesDetils() {
     const { isAuthenticated } = useContext(AuthContext);
 

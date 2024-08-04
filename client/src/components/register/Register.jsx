@@ -6,20 +6,20 @@ import { useRegister } from "../../hooks/useAuth";
 import { useForm } from "../../hooks/useForm";
 import { useState } from "react";
 
-const initialValues = { email: "", username: "", password: "", rePasword: "" };
+const initialValues = { email: "", username: "", password: "", rePassword: "" };
 
 export default function Register() {
     const [worngPassword, setWorngPassword] = useState("");
     const register = useRegister();
     const navigate = useNavigate();
 
-    const registerHandler = async ({email, username, password, rePasword}) => {
-        if(password !== rePasword) {
+    const registerHandler = async ({email, username, password, rePassword}) => {
+        if(password !== rePassword) {
             return setWorngPassword("The passwords don`t match.");
         }
 
         try {
-            await register(email, username, password, rePasword)
+            await register(email, username, password, rePassword)
             navigate("/")
         } catch (error) {
             setWorngPassword(error.message);
@@ -39,7 +39,7 @@ export default function Register() {
 
                     <div className="input-wrapper">
                         <img src={emailIcon} className="icon" />
-                        <label htmlFor="ema">Email:</label>
+                        <label htmlFor="email">Email:</label>
                         <input
                             type="email"
                             name="email"
@@ -52,7 +52,7 @@ export default function Register() {
 
                     <div className="input-wrapper">
                         <img src={loginIcon} className="icon" />    
-                        <label htmlFor="uname">Username:</label>
+                        <label htmlFor="username">Username:</label>
                         <input
                             type="text"
                             name="username"
@@ -65,7 +65,7 @@ export default function Register() {
 
                     <div className="input-wrapper">
                         <img src={passwordIcon} className="icon" />
-                        <label htmlFor="pass">Password:</label>
+                        <label htmlFor="password">Password:</label>
                         <input
                             type="password"
                             name="password"
@@ -78,12 +78,12 @@ export default function Register() {
 
                     <div className="input-wrapper">
                         <img src={passwordIcon} className="icon" />
-                        <label htmlFor="rePass">Repeate Password:</label>
+                        <label htmlFor="rePassword">Repeate Password:</label>
                         <input
                             type="password"
-                            name="rePasword"
-                            id="rePasword"
-                            value={values.rePasword}
+                            name="rePassword"
+                            id="rePassword"
+                            value={values.rePassword}
                             onChange={changeHandler}
                             placeholder="************"
                         />
