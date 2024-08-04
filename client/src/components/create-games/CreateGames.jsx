@@ -19,7 +19,7 @@ export default function CreateGames() {
             navigate(`/games/${gameId}/details`);
         } catch (error) {
             // TODO: handle error
-            console.log(err.message);
+            console.log(error.message);
         }
     };
 
@@ -36,7 +36,7 @@ export default function CreateGames() {
 
                     <h1>Create Game</h1>
                     <div className="border"></div>
-                    <label>Game title:</label>
+                    <label htmlFor="title">Game title:</label>
                     <input
                         type="text"
                         id="title"
@@ -46,7 +46,7 @@ export default function CreateGames() {
                         placeholder="Enter game title..."
                     />
 
-                    <label>Category:</label>
+                    <label htmlFor="category">Category:</label>
                     <input
                         type="text"
                         id="category"
@@ -56,7 +56,7 @@ export default function CreateGames() {
                         placeholder="Enter game category..."
                     />
 
-                    <label>Image:</label>
+                    <label htmlFor="imageUrl">Image:</label>
                     <input
                         type="text"
                         id="imageUrl"
@@ -66,7 +66,7 @@ export default function CreateGames() {
                         placeholder="Upload a photo..."
                     />
 
-                    <label>Summary:</label>
+                    <label htmlFor="summary">Summary:</label>
                     <textarea
                         name="summary"
                         id="summary"
