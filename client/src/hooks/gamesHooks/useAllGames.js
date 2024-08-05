@@ -10,9 +10,9 @@ export function useGetAllGames() {
             const result = await gamesAPI.getAll();
 
             setGames(result);
-        })();
+        });
 
-       //gamesAPI.getAll().then(result => setGames(result));
+       gamesAPI.getAll().then(result => setGames(result));
     }, []);
 
     return [games, setGames];

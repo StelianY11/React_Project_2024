@@ -13,7 +13,9 @@ export function useForm(intialValue, onSubmit) {
     const submitHandler = (e) => {
         e.preventDefault();
 
+        
         onSubmit(values);
+        setValues(intialValue);
     };
 
     return{

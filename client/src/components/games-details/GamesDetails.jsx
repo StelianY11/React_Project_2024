@@ -4,34 +4,39 @@ import { useParams } from "react-router-dom";
 import commentsApi from "../../api/commentsApi";
 import { useGetOneGame } from "../../hooks/gamesHooks/useOneGames";
 import { AuthContext } from "../../contexts/AuthContext";
+import { useForm } from "../../hooks/useForm";
+import { useGetAllComments, useCreateComment } from "../../hooks/useComments";
+
+const initialValues = {
+    comment: "",
+};
 
 
 export default function GamesDetils() {
     const { isAuthenticated } = useContext(AuthContext);
-
     const { gameId } = useParams();
+
+    const [comments, setComments] = useGetAllComments(gameId);
+    const createCommentGame = useCreateComment();
     const [game, setGame] = useGetOneGame(gameId);
-    const [username, setUsername] = useState('');
-    const [comment, setComment] = useState('');
+
+    const {
+        values,
+        changeHandler,
+        submitHandler,
+    } = useForm(initialValues, async ({ comment }) => {
+        try {
+            const newComment = await createCommentGame(gameId, comment);
+
+            setComments(oldComment => [...oldComment, newComment]);
+        } catch (error) {
+            console.log(error.message);
+        }
+    });
 
 
 
-    const commentSubitHandler = async (e) => {
-        e.preventDefault();
 
-        const newComment = await commentsApi.create(gameId, username, comment);
-
-        setGame(prevState => ({
-            ...prevState,
-            comments: {
-                ...prevState.comments,
-                [newComment._id]: newComment,
-            }
-        }))
-
-        setUsername("");
-        setComment("");
-    }
 
     return (
         <section id="game-details">
@@ -58,16 +63,14 @@ export default function GamesDetils() {
                 <div className="details-comments">
                     <h2>Comments:</h2>
                     <ul>
-                        {Object.keys(game.comments || {}).length > 0
-                            ? Object.values(game.comments).map(comment => (
-                                <li key={comment._id} className="comment">
-                                    <p>{comment.username}: {comment.text}</p>
-                                </li>
-                            ))
-                            : <p className="no-comment">No comments.</p>
+                        {comments.map(comment => (
+                            <li key={comment._id} className="comment">
+                                <p>Username: {comment.text}</p>
+                            </li>
+                        ))
                         }
                     </ul>
-
+                    {comments.length === 0 && <p className="no-comment">No comments.</p>}
                 </div>
 
                 {isAuthenticated && (
@@ -82,20 +85,12 @@ export default function GamesDetils() {
             {isAuthenticated && (
                 <article className="create-comment">
                     <label>Add new comment:</label>
-                    <form className="form" onSubmit={commentSubitHandler}>
-                        <input
-                            type="text"
-                            placeholder="Stelian"
-                            name="username"
-                            onChange={(e) => setUsername(e.target.value)}
-                            value={username}
-                        />
-
+                    <form className="form" onSubmit={submitHandler}>
                         <textarea
                             name="comment"
                             placeholder="Comment......"
-                            onChange={(e) => setComment(e.target.value)}
-                            value={comment}
+                            onChange={changeHandler}
+                            value={values.comment}
                         ></textarea>
 
                         <input className="btn add-comment" type="submit" value="Add Comment" />
